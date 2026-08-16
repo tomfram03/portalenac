@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Portal</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+            margin: 0;
+            color: #333;
+        }
+        .login-container {
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+        }
+        .header-logo {
+            text-align: center;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+        }
+        /* Estilo para o placeholder do logo genérico */
+        .logo-placeholder {
+            background: #f8f9fa;
+            border: 2px dashed #ccc;
+            padding: 20px 40px;
+            border-radius: 8px;
+            color: #0056b3;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+            outline: none;
+        }
+        .input-group input:focus {
+            border-color: #0056b3;
+        }
+        .forgot-password {
+            display: block;
+            text-align: right;
+            margin-bottom: 20px;
+            color: #0056b3;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .btn-primary {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #999;
+            margin-bottom: 20px;
+        }
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .divider::before {
+            margin-right: 15px;
+        }
+        .divider::after {
+            margin-left: 15px;
+        }
+        .btn-secondary {
+            background-color: white;
+            color: #3b82f6;
+            border: 1px solid #3b82f6;
+            padding: 15px;
+            width: 100%;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .btn-icon {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
+
+         /* Atualize esta classe */
+        .header-logo {
+            text-align: center;
+            margin-bottom: 30px;
+            /* Espaço entre o logo e o título "Login" */
+            display: flex;
+            justify-content: center;
+            /* Garante que a imagem fique centralizada */
+        }
+
+        /* Adicione esta nova classe */
+        .logo-senac {
+            max-width: 120px;
+            /* Ajuste este valor para aumentar ou diminuir o logo */
+            height: auto;
+            /* Mantém a proporção da imagem correta */
+            object-fit: contain;
+        }
+
+        .header-logo {
+            text-align: center;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="header-logo">
+            <img src="logoSenac.webp" alt="Logo" class="logo-senac">
+        </div>
+
+        <h1>Login</h1>
+        <p>Faça login para acessar o sistema.</p>
+
+        <!-- ALTERAÇÃO PRINCIPAL: Action e Method adicionados -->
+        <form action="login.php" method="POST">
+            <div class="input-group">
+                <!-- Atributo name="username" adicionado -->
+                <input type="text" name="username" placeholder="E-mail ou Documento" required>
+            </div>
+
+            <div class="input-group">
+                <!-- Atributo name="password" adicionado -->
+                <input type="password" name="password" placeholder="Senha" required>
+            </div>
+
+            <a href="#" class="forgot-password">Esqueceu sua senha?</a>
+
+            <!-- Botão do tipo submit -->
+            <button type="submit" class="btn-primary">Entrar</button>
+        </form>
+
+        <div class="divider">ou</div>
+
+        <button type="button" class="btn-secondary">Entrar com código</button>
+        <button type="button" class="btn-secondary">
+            <img src="google.png" alt="Logo Google" class="btn-icon">
+            Entrar com Google</button>
+        <button type="button" class="btn-secondary">
+            <img src="microsoft.jpg" alt="Logo Microsoft" class="btn-icon">
+            Entrar com Microsoft</button>
+    </div>
+
+</body>
+</html>
